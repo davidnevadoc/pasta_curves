@@ -140,6 +140,11 @@ pub struct Coordinates<C: CurveAffine> {
 
 #[cfg(feature = "alloc")]
 impl<C: CurveAffine> Coordinates<C> {
+    /// Constructs new Coordinates given
+    /// its x, y values.
+    pub fn new(x: C::Base, y: C::Base) -> Self {
+        Self { x, y }
+    }
     /// Returns the x-coordinate.
     ///
     /// Equivalent to `Coordinates::u`.
